@@ -1,0 +1,88 @@
+---
+// src/pages/batman.astro
+import Layout from '../layouts/Layout.astro';
+
+// Endpoint para obtener a Batman (ID 1)
+const API_URL = 'https://api.batmanapi.com/v1/characters/1';
+
+let batmanInfo = null;
+
+try {
+    const response = await fetch(API_URL);
+    const result = await response.json();
+    
+    // Almacena los atributos si la solicitud es exitosa
+    if (response.ok && result.data) {
+        batmanInfo = result.data.attributes;
+    }
+
+} catch (error) {
+    console.error("Error al obtener la información de Batman:", error);
+}
+
+// Información por defecto (Fallback)
+// 💡 TEXTO TRADUCIDO AL ESPAÑOL AQUÍ 💡
+const defaultInfo = {
+    name: "Bruce Wayne",
+    alias: "Batman",
+    description: "El Caballero Oscuro y protector de Gotham City. Un genio, atleta y experto en artes marciales.",
+    role: "Héroe",
+    abilities: ["Artes Marciales", "Habilidades de Detective", "Sigilo"],
+    first_appearance: "Desconocida",
+    image_url: "https://via.placeholder.com/900x400?text=IMAGEN+DE+BATMAN" 
+};
+
+const info = batmanInfo || defaultInfo;
+---
+
+<Layout title={`Batman - ${info.alias}`}>
+  <section style="max-width: 900px; margin: 0 auto; padding-top: 20px;">
+    
+    <h1>{info.alias} ({info.name})</h1>
+    
+    <hr style="border-top: 3px solid #f7d354; border-color: #f7d354; margin-bottom: 40px;">
+    
+    {info.image_url && (
+      <div style="margin-bottom: 30px; text-align: center;">
+        <img 
+          src={info.image_url} 
+          alt={`Imagen de ${info.alias}`} 
+          style="
+            width: 100%; 
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px; 
+            border: 3px solid #f7d354;
+            display: block;
+            margin: 0 auto;
+          "
+        />
+      </div>
+    )}
+
+    <div style="text-align: center;">
+      <h2>El Defensor de Gotham</h2>
+      <p style="font-size: 1.15rem; line-height: 1.6;">{info.description}</p>
+      
+      <h3>Detalles</h3>
+      <p><strong>Rol:</strong> {info.role}</p>
+      <p><strong>Primera Aparición:</strong> {info.first_appearance || 'Desconocida'}</p>
+
+      <h3>Habilidades Destacadas</h3>
+      <ul style="list-style: none; padding-left: 0;">
+          {info.abilities && info.abilities.map((ability: any) => (
+              <li style="background-color: #333; padding: 8px 15px; margin-bottom: 5px; border-radius: 4px; display: inline-block; margin-right: 10px;">
+                  {ability}
+              </li>
+          ))}
+      </ul>
+    </div>
+  </section>
+  
+  <p style="text-align: center; margin-top: 50px;">
+    <a href="/personajes" style="color: #f7d354; text-decoration: none; font-weight: bold;">
+        ¿Listo para ver al resto de los personajes de Gotham?
+    </a>
+  </p>
+
+</Layout>

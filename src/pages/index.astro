@@ -1,11 +1,76 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// src/pages/index.astro
+import batLogo from '../assets/logo batman.png';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bienvenido a Gotham - Fan Site</title>
+    <style>
+      body {
+        margin: 0; 
+        
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        background-color: #0d1117;
+        color: white;
+        padding: 50px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow-y: hidden;
+      }
+      .logo-img {
+          width: 150px;
+          height: auto;
+          margin-bottom: 25px;
+      }
+      h1 {
+        font-size: 3.5rem;
+        color: #f7d354; 
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        max-width: 600px;
+      }
+      .bat-button {
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 1.25rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: #0d1117; 
+        background-color: #f7d354; 
+        border: 3px solid #f7d354;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      }
+      .bat-button:hover {
+        background-color: #0d1117;
+        color: #f7d354;
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <img src={batLogo.src} alt="Logo de Batman" class="logo-img" />
+
+    <h1>Bienvenido a la Batcueva Digital</h1>
+    <p>
+      Explora los personajes, lugares e historias que dan vida al mundo del Caballero Oscuro,
+      utilizando la <a href="https://batmanapi.com/doc/batman-api/" target="_blank" style="color: #f7d354;">Batman API</a> 
+    </p>
+    
+    <a href="/batman" class="bat-button">
+      Entrar a la Batcueva y Explorar
+    </a>
+  </body>
+</html>
