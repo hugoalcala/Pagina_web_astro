@@ -1,0 +1,342 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Personajes - Batman">
+    <div class="personajes-container">
+        <h1>Personajes del Universo de Batman</h1>
+        
+        <!-- Buscador y Filtros -->
+        <div class="controles">
+            <input 
+                type="text" 
+                id="buscador" 
+                class="buscador" 
+                placeholder="Buscar personaje..."
+            />
+            
+            <div class="filtros">
+                <button class="btn-filtro active" data-filtro="todos">Todos</button>
+                <button class="btn-filtro" data-filtro="aliados">Aliados</button>
+                <button class="btn-filtro" data-filtro="enemigos">Enemigos</button>
+            </div>
+        </div>
+
+        <div id="contador-resultados" class="contador"></div>
+        
+        <!-- Sección de Aliados -->
+        <section class="seccion aliados" data-categoria="aliados">
+            <h2 class="titulo-seccion">Aliados</h2>
+            <div class="grid-personajes">
+                <div class="card-personaje" data-categoria="aliados" data-nombre="Robin">
+                    <h3>Robin</h3>
+                    <p>Dick Grayson, el primer Robin y compañero fiel de Batman. Acróbata excepcional y líder de los Jóvenes Titanes.</p>
+                </div>
+                <div class="card-personaje" data-categoria="aliados" data-nombre="Alfred Pennyworth">
+                    <h3>Alfred Pennyworth</h3>
+                    <p>Mayordomo y figura paterna de Bruce Wayne. Su sabiduría y apoyo son fundamentales para Batman.</p>
+                </div>
+                <div class="card-personaje" data-categoria="aliados" data-nombre="Comisionado Gordon">
+                    <h3>Comisionado Gordon</h3>
+                    <p>Jefe de la policía de Gotham y aliado clave de Batman en la lucha contra el crimen.</p>
+                </div>
+                <div class="card-personaje" data-categoria="aliados" data-nombre="Batgirl">
+                    <h3>Batgirl</h3>
+                    <p>Barbara Gordon, hija del Comisionado. Experta en tecnología y combate.</p>
+                </div>
+                <div class="card-personaje" data-categoria="aliados" data-nombre="Nightwing">
+                    <h3>Nightwing</h3>
+                    <p>La identidad adulta de Dick Grayson. Héroe independiente pero siempre leal a la familia Bat.</p>
+                </div>
+                <div class="card-personaje" data-categoria="aliados" data-nombre="Lucius Fox">
+                    <h3>Lucius Fox</h3>
+                    <p>Genio tecnológico y CEO de Wayne Enterprises. Creador del equipamiento de Batman.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Enemigos -->
+        <section class="seccion enemigos" data-categoria="enemigos">
+            <h2 class="titulo-seccion">Enemigos</h2>
+            <div class="grid-personajes">
+                <div class="card-personaje" data-categoria="enemigos" data-nombre="El Joker">
+                    <h3>El Joker</h3>
+                    <p>El némesis por excelencia. Criminal demente obsesionado con el caos y Batman.</p>
+                </div>
+                <div class="card-personaje" data-categoria="enemigos" data-nombre="El Pingüino">
+                    <h3>El Pingüino</h3>
+                    <p>Oswald Cobblepot, señor del crimen con apariencia de pingüino y paraguas mortales.</p>
+                </div>
+                <div class="card-personaje" data-categoria="enemigos" data-nombre="El Acertijo">
+                    <h3>El Acertijo</h3>
+                    <p>Edward Nygma, criminal obsesionado con los acertijos y demostrar su superioridad intelectual.</p>
+                </div>
+                <div class="card-personaje" data-categoria="enemigos" data-nombre="Catwoman">
+                    <h3>Catwoman</h3>
+                    <p>Selina Kyle, ladrona de joyas con una relación compleja con Batman.</p>
+                </div>
+                <div class="card-personaje" data-categoria="enemigos" data-nombre="Dos Caras">
+                    <h3>Dos Caras</h3>
+                    <p>Harvey Dent, ex fiscal convertido en criminal que toma decisiones lanzando una moneda.</p>
+                </div>
+                <div class="card-personaje" data-categoria="enemigos" data-nombre="Bane">
+                    <h3>Bane</h3>
+                    <p>Táctico brutal conocido por romper la espalda de Batman. Fuerza sobrehumana.</p>
+                </div>
+                <div class="card-personaje" data-categoria="enemigos" data-nombre="Scarecrow">
+                    <h3>Scarecrow</h3>
+                    <p>Jonathan Crane, maestro del miedo que utiliza toxinas para aterrorizar a sus víctimas.</p>
+                </div>
+                <div class="card-personaje" data-categoria="enemigos" data-nombre="Hiedra Venenosa">
+                    <h3>Hiedra Venenosa</h3>
+                    <p>Pamela Isley, eco-terrorista con control sobre las plantas y toxinas letales.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>
+
+<style>
+    .personajes-container {
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #f7d354;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    /* Controles de búsqueda y filtrado */
+    .controles {
+        max-width: 800px;
+        margin: 0 auto 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .buscador {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 1.1rem;
+        border: 3px solid #f7d354;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        outline: none;
+        transition: all 0.3s ease;
+    }
+
+    .buscador:focus {
+        background-color: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 20px rgba(247, 211, 84, 0.5);
+    }
+
+    .buscador::placeholder {
+        color: #999;
+    }
+
+    .filtros {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .btn-filtro {
+        padding: 12px 30px;
+        font-size: 1rem;
+        font-weight: bold;
+        border: 2px solid #f7d354;
+        border-radius: 8px;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .btn-filtro:hover {
+        background-color: rgba(247, 211, 84, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .btn-filtro.active {
+        background-color: #f7d354;
+        color: #000;
+        box-shadow: 0 4px 15px rgba(247, 211, 84, 0.5);
+    }
+
+    .contador {
+        text-align: center;
+        color: #f7d354;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        min-height: 30px;
+    }
+
+    .seccion {
+        margin-bottom: 60px;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    .seccion.oculto {
+        display: none;
+    }
+
+    .aliados {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        border: 3px solid #4a90e2;
+    }
+
+    .enemigos {
+        background: linear-gradient(135deg, #4a0e0e 0%, #8b1a1a 100%);
+        border: 3px solid #e74c3c;
+    }
+
+    .titulo-seccion {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #f7d354;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .grid-personajes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .card-personaje {
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 25px;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+        border: 2px solid rgba(247, 211, 84, 0.3);
+    }
+
+    .card-personaje.oculto {
+        display: none;
+    }
+
+    .card-personaje:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(247, 211, 84, 0.3);
+        border-color: #f7d354;
+    }
+
+    .card-personaje h3 {
+        color: #f7d354;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .card-personaje p {
+        color: #e0e0e0;
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+        .grid-personajes {
+            grid-template-columns: 1fr;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        .titulo-seccion {
+            font-size: 1.5rem;
+        }
+
+        .filtros {
+            flex-direction: column;
+        }
+
+        .btn-filtro {
+            width: 100%;
+        }
+    }
+</style>
+
+<script>
+    // Funcionalidad de filtrado y búsqueda
+    const buscador = document.getElementById('buscador') as HTMLInputElement;
+    const botonesFiltro = document.querySelectorAll('.btn-filtro');
+    const tarjetasPersonajes = document.querySelectorAll('.card-personaje');
+    const secciones = document.querySelectorAll('.seccion');
+    const contadorResultados = document.getElementById('contador-resultados');
+
+    let filtroActual = 'todos';
+
+    // Función para actualizar la visualización
+    function actualizarVista() {
+        const textoBusqueda = buscador.value.toLowerCase();
+        let contadorVisible = 0;
+
+        tarjetasPersonajes.forEach(tarjeta => {
+            const nombre = (tarjeta as HTMLElement).dataset.nombre?.toLowerCase() || '';
+            const categoria = (tarjeta as HTMLElement).dataset.categoria;
+            
+            const coincideBusqueda = nombre.includes(textoBusqueda);
+            const coincideCategoria = filtroActual === 'todos' || categoria === filtroActual;
+
+            if (coincideBusqueda && coincideCategoria) {
+                tarjeta.classList.remove('oculto');
+                contadorVisible++;
+            } else {
+                tarjeta.classList.add('oculto');
+            }
+        });
+
+        // Mostrar/ocultar secciones según el filtro
+        secciones.forEach(seccion => {
+            const categoria = (seccion as HTMLElement).dataset.categoria;
+            if (filtroActual === 'todos' || categoria === filtroActual) {
+                seccion.classList.remove('oculto');
+            } else {
+                seccion.classList.add('oculto');
+            }
+        });
+
+        // Actualizar contador
+        if (contadorResultados) {
+            if (textoBusqueda) {
+                contadorResultados.textContent = `${contadorVisible} personaje${contadorVisible !== 1 ? 's' : ''} encontrado${contadorVisible !== 1 ? 's' : ''}`;
+            } else {
+                contadorResultados.textContent = '';
+            }
+        }
+    }
+
+    // Event listener para el buscador
+    buscador?.addEventListener('input', actualizarVista);
+
+    // Event listeners para los botones de filtro
+    botonesFiltro.forEach(boton => {
+        boton.addEventListener('click', () => {
+            // Remover clase active de todos los botones
+            botonesFiltro.forEach(b => b.classList.remove('active'));
+            // Añadir clase active al botón clickeado
+            boton.classList.add('active');
+            
+            // Actualizar filtro actual
+            filtroActual = (boton as HTMLElement).dataset.filtro || 'todos';
+            
+            // Actualizar vista
+            actualizarVista();
+        });
+    });
+</script>

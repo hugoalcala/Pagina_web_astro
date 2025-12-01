@@ -3,6 +3,7 @@
 // Props: Define las variables que las páginas que usen este layout deben proveer.
 // Aquí solo necesitamos el título.
 const { title = 'Batman Fan Site' } = Astro.props;
+import logoBatman from '../assets/logo batman.png';
 ---
 
 <!doctype html>
@@ -20,6 +21,7 @@ const { title = 'Batman Fan Site' } = Astro.props;
         .header { background-color: #000; color: #f7d354; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #f7d354; }
         .header a { color: white; text-decoration: none; font-weight: bold; padding: 8px 15px; }
         .header a:hover { color: #f7d354; }
+        .header-logo { height: 50px; width: auto; object-fit: contain; }
 
         /* Footer Style */
         .footer { 
@@ -37,10 +39,10 @@ const { title = 'Batman Fan Site' } = Astro.props;
     <header class="header">
         <div>
             <a href="/batman">BATMAN</a>
-            <a href="/enemigos">ENEMIGOS</a>
-            <a href="/aliados">ALIADOS</a>
+            <a href="/personajes">PERSONAJES</a>
+            
         </div>
-        <span style="font-size: 1.5em; color: #f7d354;">El Caballero Oscuro</span>
+        <img src={logoBatman.src} alt="Batman Logo" class="header-logo" />
     </header>
 
     <main>
