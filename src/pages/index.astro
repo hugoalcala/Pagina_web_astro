@@ -50,13 +50,50 @@ import batLogo from '../assets/logo batman.png';
         background-color: #f7d354; 
         border: 3px solid #f7d354;
         border-radius: 8px;
-        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 15px rgba(247, 211, 84, 0.4);
+        position: relative;
+        overflow: hidden;
+        animation: pulse 2s ease-in-out infinite;
       }
+      
+      .bat-button::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+      }
+      
+      .bat-button:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+      
       .bat-button:hover {
         background-color: #0d1117;
         color: #f7d354;
-        transform: translateY(-2px);
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(247, 211, 84, 0.6);
+        animation: none;
+      }
+      
+      .bat-button:active {
+        transform: translateY(-2px) scale(1.02);
+      }
+      
+      @keyframes pulse {
+        0%, 100% {
+          box-shadow: 0 4px 15px rgba(247, 211, 84, 0.4);
+        }
+        50% {
+          box-shadow: 0 4px 25px rgba(247, 211, 84, 0.8);
+        }
       }
     </style>
   </head>
