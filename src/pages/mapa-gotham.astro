@@ -7,9 +7,10 @@ title: "Mapa de Gotham";
   <div class="mapa-gotham-container">
     <h1 class="mapa-gotham-title">Mapa de Gotham</h1>
     <p class="mapa-gotham-desc">Explora los lugares más emblemáticos de Gotham City. Haz clic en los puntos destacados para saber más.</p>
-    <div class="mapa-gotham-img-wrap">
+    <div class="mapa-gotham-img-wrap" style="position:relative;">
       <img src="/src/assets/mapa_gotham.png" alt="Mapa ilustrado de Gotham City" class="mapa-gotham-img" />
-      <!-- Puedes añadir puntos interactivos aquí si tienes el mapa -->
+      <div class="mapa-gotham-fog"></div>
+      <div class="mapa-gotham-lights"></div>
     </div>
     <a href="/gotham" class="mapa-gotham-back">← Volver a Gotham</a>
   </div>
@@ -43,6 +44,7 @@ title: "Mapa de Gotham";
   justify-content: center;
   align-items: center;
   margin-bottom: 32px;
+  position: relative;
 }
 .mapa-gotham-img {
   max-width: 100%;
@@ -65,5 +67,40 @@ title: "Mapa de Gotham";
 .mapa-gotham-back:hover {
   background: #ffe066;
   color: #23243a;
+}
+.mapa-gotham-fog {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: url('https://www.transparenttextures.com/patterns/foggy-birds.png'), linear-gradient(120deg, #23243a44 60%, #181a1f33 100%);
+  opacity: 0.18;
+  mix-blend-mode: lighten;
+  animation: fogmove 18s linear infinite alternate;
+  border-radius: 16px;
+  z-index: 2;
+}
+@keyframes fogmove {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 120px 60px, 60px 120px; }
+}
+.mapa-gotham-lights {
+  position: absolute;
+  left: 60%;
+  top: 22%;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffe066cc 0%, #ffe06622 80%, transparent 100%);
+  filter: blur(2px);
+  opacity: 0.7;
+  z-index: 3;
+  animation: light-flicker 2.2s infinite alternate;
+  pointer-events: none;
+}
+@keyframes light-flicker {
+  0% { opacity: 0.7; filter: blur(2px); }
+  40% { opacity: 0.9; filter: blur(1.5px); }
+  60% { opacity: 0.6; filter: blur(2.5px); }
+  100% { opacity: 0.8; filter: blur(2px); }
 }
 </style>
