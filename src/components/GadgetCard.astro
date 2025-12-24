@@ -1,11 +1,65 @@
 ---
-// Props: nombre, descripcion, caracteristicas (array)
-const { nombre, descripcion, caracteristicas = [] } = Astro.props;
+// Props: nombre, descripcion, caracteristicas (array), imagen
+const { nombre, descripcion, caracteristicas = [], imagen } = Astro.props;
 ---
-<div class="card-gadget" style="background:linear-gradient(145deg,#1a1a1a,#2d2d2d); border:2px solid #f7d354; border-radius:15px; padding:30px; margin-bottom:18px; box-shadow:0 5px 20px rgba(0,0,0,0.5);">
-  <h3 style="color:#f7d354; font-size:1.2rem; margin-bottom:12px;">{nombre}</h3>
-  <p class="descripcion" style="color:#e0e0e0; margin-bottom:16px;">{descripcion}</p>
-  <div class="caracteristicas" style="display:flex; gap:10px; flex-wrap:wrap;">
-    {caracteristicas.map(carac => <span class="tag" style="background-color:rgba(247,211,84,0.2); color:#f7d354; padding:6px 14px; border-radius:20px; font-size:0.85rem; font-weight:bold; border:1px solid rgba(247,211,84,0.4);">{carac}</span>)}
+<div class="card-gadget">
+  {imagen && <img src={imagen} alt={nombre} class="gadget-img" />}
+  <h3>{nombre}</h3>
+  <p class="descripcion">{descripcion}</p>
+  <div class="caracteristicas">
+    {Array.isArray(caracteristicas) && caracteristicas.length > 0 && caracteristicas.map((carac, idx) => (
+      <span class="tag" key={idx}>{carac}</span>
+    ))}
   </div>
 </div>
+<style>
+.card-gadget {
+  background: linear-gradient(145deg,#1a1a1a,#2d2d2d);
+  border:2px solid #f7d354;
+  border-radius:15px;
+  padding:30px;
+  margin-bottom:18px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s cubic-bezier(.25,.8,.25,1), box-shadow 0.25s cubic-bezier(.25,.8,.25,1);
+}
+.card-gadget:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 32px rgba(0,0,0,0.7);
+  z-index: 2;
+}
+.card-gadget h3 {
+  color:#f7d354;
+  font-size:1.2rem;
+  margin-bottom:12px;
+}
+.card-gadget .descripcion {
+  color:#e0e0e0;
+  margin-bottom:16px;
+}
+.caracteristicas {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.tag {
+  background-color:rgba(247,211,84,0.2);
+  color:#f7d354;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:0.85rem;
+  font-weight:bold;
+  border:1px solid rgba(247,211,84,0.4);
+}
+.gadget-img {
+  display: block;
+  margin: 0 auto 18px auto;
+  max-width: 140px;
+  max-height: 90px;
+  object-fit: contain;
+  border-radius: 0;
+  background: none;
+}
+</style>

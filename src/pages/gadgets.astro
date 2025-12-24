@@ -1,412 +1,54 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import GadgetCard from '../components/GadgetCard.astro';
+import BackButton from '../components/BackButton.astro';
 ---
 
 <Layout title="Gadgets - Batman">
     <div class="top-gadgets-section">
         <h2>Top 3 Gadgets Más Usados</h2>
         <div class="top-gadgets-grid">
-            <!-- Batarang -->
-            <div class="top-gadget-card">
-                <img src="/src/assets/batarang.webp" alt="Batarang" />
-                <h3>Batarang</h3>
-                <p class="descripcion">Proyectil con forma de murciélago. Existe en múltiples variantes: explosivo, eléctrico, de rastreo y control remoto.</p>
-            </div>
-            <!-- Cinturón de Utilidades -->
-            <div class="top-gadget-card">
-                <img src="/src/assets/cinturon_batman.jpg" alt="Cinturón de Utilidades" />
-                <h3>Cinturón de Utilidades</h3>
-                <p class="descripcion">Contiene todos sus gadgets en compartimentos especializados. Hecho de aleación ligera y resistente.</p>
-            </div>
-            <!-- Pistola de Gancho -->
-            <div class="top-gadget-card">
-                <img src="/src/assets/Pistola_Gancho_Batman.webp" alt="Pistola de Gancho" />
-                <h3>Pistola de Gancho</h3>
-                <p class="descripcion">Dispositivo de agarre que dispara un cable de alta resistencia para escalar edificios y moverse rápidamente.</p>
-            </div>
+            <GadgetCard nombre="Batarang" imagen="/src/assets/batarang.webp" descripcion="Proyectil con forma de murciélago. Existe en múltiples variantes: explosivo, eléctrico, de rastreo y control remoto." caracteristicas={["Arma arrojadiza", "Versátil"]} />
+            <GadgetCard nombre="Cinturón de Utilidades" imagen="/src/assets/cinturon_batman.jpg" descripcion="Contiene todos sus gadgets en compartimentos especializados. Hecho de aleación ligera y resistente." caracteristicas={["Almacenamiento", "Icónico"]} />
+            <GadgetCard nombre="Pistola de Gancho" imagen="/src/assets/Pistola_Gancho_Batman.webp" descripcion="Dispositivo de agarre que dispara un cable de alta resistencia para escalar edificios y moverse rápidamente." caracteristicas={["Movilidad", "Esencial"]} />
         </div>
     </div>
     <div class="gadgets-container">
         <h1>Arsenal de Batman</h1>
         <p class="intro">El Caballero Oscuro cuenta con el arsenal tecnológico más avanzado del mundo, cortesía de Wayne Enterprises.</p>
-        
         <div class="grid-gadgets">
-            <!-- Batarang -->
-            <div class="card-gadget">
-                <!-- Imagen eliminada -->
-                <h3>Batarang</h3>
-                <p class="descripcion">Proyectil con forma de murciélago. Existe en múltiples variantes: explosivo, eléctrico, de rastreo y control remoto.</p>
-                <div class="caracteristicas">
-                    <span class="tag">Arma arrojadiza</span>
-                    <span class="tag">Versátil</span>
-                </div>
-            </div>
 
-            <!-- Batcape -->
-            <div class="card-gadget">
-                <!-- Imagen eliminada -->
-                <h3>Capa de Planeo</h3>
-                <p class="descripcion">Capa reforzada con fibra de memoria que se endurece formando alas, permitiendo planear sobre Gotham.</p>
-                <div class="caracteristicas">
-                    <span class="tag">Movilidad</span>
-                    <span class="tag">Protección</span>
-                </div>
-            </div>
+            <!-- Usando GadgetCard para cada gadget -->
+            <GadgetCard nombre="Batarang" descripcion="Proyectil con forma de murciélago. Existe en múltiples variantes: explosivo, eléctrico, de rastreo y control remoto." caracteristicas={["Arma arrojadiza", "Versátil"]} />
+            <GadgetCard nombre="Capa de Planeo" descripcion="Capa reforzada con fibra de memoria que se endurece formando alas, permitiendo planear sobre Gotham." caracteristicas={["Movilidad", "Protección"]} />
+            <GadgetCard nombre="Pistola de Gancho" descripcion="Dispositivo de agarre que dispara un cable de alta resistencia para escalar edificios y moverse rápidamente." caracteristicas={["Movilidad", "Esencial"]} />
+            <GadgetCard nombre="Cinturón de Utilidades" descripcion="Contiene todos sus gadgets en compartimentos especializados. Hecho de aleación ligera y resistente." caracteristicas={["Almacenamiento", "Icónico"]} />
+            <GadgetCard nombre="Cápsulas de Humo" descripcion="Pequeñas esferas que liberan humo denso para crear cortinas de cobertura o escapar de situaciones peligrosas." caracteristicas={["Táctica", "Escape"]} />
+            <GadgetCard nombre="Batsuit" descripcion="Traje blindado de kevlar y titanio que protege contra armas de fuego, cuchillos y explosivos." caracteristicas={["Armadura", "Protección"]} />
+            <GadgetCard nombre="Secuenciador Criptográfico" descripcion="Dispositivo de hackeo capaz de descifrar códigos, abrir cerraduras electrónicas y acceder a sistemas de seguridad." caracteristicas={["Tecnología", "Infiltración"]} />
+            <GadgetCard nombre="Visión de Detective" descripcion="Sistema de lentes en la capucha que permite visión nocturna, térmica y análisis forense en tiempo real." caracteristicas={["Investigación", "Análisis"]} />
+            <GadgetCard nombre="Dispositivo EMP" descripcion="Generador de pulso electromagnético que desactiva equipos electrónicos en un radio determinado." caracteristicas={["Electrónica", "Disrupción"]} />
+            <GadgetCard nombre="Gel Explosivo" descripcion="Compuesto adhesivo que se aplica en superficies y se detona remotamente para crear aberturas o destruir obstáculos." caracteristicas={["Demolición", "Táctica"]} />
+            <GadgetCard nombre="Rebreather" descripcion="Sistema de respiración compacto que permite permanecer bajo el agua o en ambientes tóxicos por períodos prolongados." caracteristicas={["Supervivencia", "Adaptación"]} />
+            <GadgetCard nombre="Batcomputadora Remota" descripcion="Interfaz portátil conectada a la supercomputadora de la Batcueva para análisis y coordinación en campo." caracteristicas={["Tecnología", "Comunicación"]} />
+            <GadgetCard nombre="Batarangs Eléctricos" descripcion="Versión del batarang que emite una descarga eléctrica al impacto, incapacitando temporalmente al objetivo." caracteristicas={["Arma", "No letal"]} />
+            <GadgetCard nombre="Lanzador de Línea" descripcion="Dispara cables en dos direcciones opuestas creando una línea de tirolesa para cruzar grandes distancias." caracteristicas={["Movilidad", "Travesía"]} />
+            <GadgetCard nombre="Anillo de Kryptonita" descripcion="Regalo de Superman. Anillo que contiene kryptonita para ser usado solo en caso de que Superman se vuelva una amenaza." caracteristicas={["Emergencia", "Contingencia"]} />
 
-            <!-- Grappling Hook -->
-            <div class="card-gadget">
-                <!-- Imagen eliminada -->
-                <h3>Pistola de Gancho</h3>
-                <p class="descripcion">Dispositivo de agarre que dispara un cable de alta resistencia para escalar edificios y moverse rápidamente.</p>
-                <div class="caracteristicas">
-                    <span class="tag">Movilidad</span>
-                    <span class="tag">Esencial</span>
-                </div>
-            </div>
+                </Layout>
 
-            <!-- Utility Belt -->
-            <div class="card-gadget">
-                <!-- Imagen eliminada -->
-                <h3>Cinturón de Utilidades</h3>
-                <p class="descripcion">Contiene todos sus gadgets en compartimentos especializados. Hecho de aleación ligera y resistente.</p>
-                <div class="caracteristicas">
-                    <span class="tag">Almacenamiento</span>
-                    <span class="tag">Icónico</span>
-                </div>
-            </div>
-
-            <!-- Smoke Pellets -->
-            <div class="card-gadget">
-                <!-- Imagen eliminada -->
-                <h3>Cápsulas de Humo</h3>
-                <p class="descripcion">Pequeñas esferas que liberan humo denso para crear cortinas de cobertura o escapar de situaciones peligrosas.</p>
-                <div class="caracteristicas">
-                    <span class="tag">Táctica</span>
-                    <span class="tag">Escape</span>
-                </div>
-            </div>
-
-            <!-- Batsuit -->
-            <div class="card-gadget">
-                <!-- Imagen eliminada -->
-                <h3>Batsuit</h3>
-                <p class="descripcion">Traje blindado de kevlar y titanio que protege contra armas de fuego, cuchillos y explosivos.</p>
-                <div class="caracteristicas">
-                    <span class="tag">Armadura</span>
-                    <span class="tag">Protección</span>
-                </div>
-            </div>
-
-            <!-- Cryptographic Sequencer -->
-            <div class="card-gadget">
-                <!-- Imagen eliminada -->
-                <h3>Secuenciador Criptográfico</h3>
-                <p class="descripcion">Dispositivo de hackeo capaz de descifrar códigos, abrir cerraduras electrónicas y acceder a sistemas de seguridad.</p>
-                <div class="caracteristicas">
-                    <span class="tag">Tecnología</span>
-                    <span class="tag">Infiltración</span>
-                </div>
-            </div>
-
-            <!-- Detective Vision -->
-            <div class="card-gadget">
-                <!-- Imagen eliminada -->
-                <h3>Visión de Detective</h3>
-                <p class="descripcion">Sistema de lentes en la capucha que permite visión nocturna, térmica y análisis forense en tiempo real.</p>
-                <div class="caracteristicas">
-                    <span class="tag">Investigación</span>
-                    <span class="tag">Análisis</span>
-                </div>
-            </div>
-
-            <!-- EMP Device -->
-            <div class="card-gadget">
-                <!-- Imagen eliminada -->
-                <h3>Dispositivo EMP</h3>
-                <p class="descripcion">Generador de pulso electromagnético que desactiva equipos electrónicos en un radio determinado.</p>
-                <div class="caracteristicas">
-                    <span class="tag">Electrónica</span>
-                    <span class="tag">Disrupción</span>
-                </div>
-            </div>
-
-            <!-- Explosive Gel -->
-            <div class="card-gadget">
-                <!-- Imagen eliminada -->
-                <h3>Gel Explosivo</h3>
-                <p class="descripcion">Compuesto adhesivo que se aplica en superficies y se detona remotamente para crear aberturas o destruir obstáculos.</p>
-                <div class="caracteristicas">
-                    <span class="tag">Demolición</span>
-                    <span class="tag">Táctica</span>
-                </div>
-            </div>
-
-            <!-- Rebreather -->
-            <div class="card-gadget">
-                <!-- Imagen eliminada -->
-                <h3>Rebreather</h3>
-                <p class="descripcion">Sistema de respiración compacto que permite permanecer bajo el agua o en ambientes tóxicos por períodos prolongados.</p>
-                <div class="caracteristicas">
-                    <span class="tag">Supervivencia</span>
-                    <span class="tag">Adaptación</span>
-                </div>
-            </div>
-
-            <!-- Batcomputer Remote -->
-            <div class="card-gadget">
-                <!-- Imagen eliminada -->
-                <h3>Batcomputadora Remota</h3>
-                <p class="descripcion">Interfaz portátil conectada a la supercomputadora de la Batcueva para análisis y coordinación en campo.</p>
-                <div class="caracteristicas">
-                    <span class="tag">Tecnología</span>
-                    <span class="tag">Comunicación</span>
-                </div>
-            </div>
-
-            <!-- Batarangs Especiales -->
-            <div class="card-gadget">
-                <!-- Imagen eliminada -->
-                <h3>Batarangs Eléctricos</h3>
-                <p class="descripcion">Versión del batarang que emite una descarga eléctrica al impacto, incapacitando temporalmente al objetivo.</p>
-                <div class="caracteristicas">
-                    <span class="tag">Arma</span>
-                    <span class="tag">No letal</span>
-                </div>
-            </div>
-
-            <!-- Line Launcher -->
-            <div class="card-gadget">
-                <!-- Imagen eliminada -->
-                <h3>Lanzador de Línea</h3>
-                <p class="descripcion">Dispara cables en dos direcciones opuestas creando una línea de tirolesa para cruzar grandes distancias.</p>
-                <div class="caracteristicas">
-                    <span class="tag">Movilidad</span>
-                    <span class="tag">Travesía</span>
-                </div>
-            </div>
-
-            <!-- Kryptonite Ring -->
-            <div class="card-gadget">
-                <!-- Imagen eliminada -->
-                <h3>Anillo de Kryptonita</h3>
-                <p class="descripcion">Regalo de Superman. Anillo que contiene kryptonita para ser usado solo en caso de que Superman se vuelva una amenaza.</p>
-                <div class="caracteristicas">
-                    <span class="tag">Emergencia</span>
-                    <span class="tag">Contingencia</span>
-                </div>
-            </div>
-
-            <!-- Batmobile Remote -->
-            <div class="card-gadget">
-                <!-- Imagen eliminada -->
-                <h3>Control Remoto del Batmóvil</h3>
-                <p class="descripcion">Dispositivo que permite llamar y controlar el Batmóvil a distancia para extracción rápida o apoyo táctico.</p>
-                <div class="caracteristicas">
-                    <span class="tag">Vehículo</span>
-                    <span class="tag">Soporte</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</Layout>
-
-<style>
-    .gadgets-container {
-        padding: 20px;
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    h1 {
-        text-align: center;
-        color: #f7d354;
-        font-size: 3rem;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-    }
-
-    .intro {
-        text-align: center;
-        font-size: 1.2rem;
-        color: #ccc;
-        max-width: 800px;
-        margin: 0 auto 50px;
-        line-height: 1.6;
-    }
-
-    .grid-gadgets {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 30px;
-        margin-top: 40px;
-    }
-
-    .card-gadget {
-        background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-        border: 2px solid #f7d354;
-        border-radius: 15px;
-        padding: 30px;
-        transition: all 0.4s ease;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-    }
-
-    .card-gadget::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(247, 211, 84, 0.1) 0%, transparent 70%);
-        opacity: 0;
-        transition: opacity 0.4s ease;
-    }
-
-    .card-gadget:hover::before {
-        opacity: 1;
-    }
-
-    .card-gadget:hover {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: 0 15px 40px rgba(247, 211, 84, 0.3);
-        border-color: #fff;
-    }
-
-    .gadget-image {
-        width: 100%;
-        height: 200px;
-        margin-bottom: 20px;
-        border-radius: 10px;
-        overflow: hidden;
-        position: relative;
-        background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
-    }
-
-    .gadget-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.4s ease;
-        filter: brightness(0.8) contrast(1.1);
-    }
-
-    .card-gadget:hover .gadget-image img {
-        transform: scale(1.1);
-        filter: brightness(1) contrast(1.2);
-    }
-
-    .card-gadget h3 {
-        color: #f7d354;
-        font-size: 1.6rem;
-        margin-bottom: 15px;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .descripcion {
-        color: #e0e0e0;
-        line-height: 1.7;
-        font-size: 1rem;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .caracteristicas {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    .tag {
-        background-color: rgba(247, 211, 84, 0.2);
-        color: #f7d354;
-        padding: 6px 14px;
-        border-radius: 20px;
-        font-size: 0.85rem;
-        font-weight: bold;
-        border: 1px solid rgba(247, 211, 84, 0.4);
-        transition: all 0.3s ease;
-    }
-
-    .card-gadget:hover .tag {
-        background-color: rgba(247, 211, 84, 0.3);
-        border-color: #f7d354;
-    }
-
-    @media (max-width: 768px) {
-        h1 {
-            font-size: 2rem;
-        }
-
-        .grid-gadgets {
-            grid-template-columns: 1fr;
-        }
-
-        .intro {
-            font-size: 1rem;
-        }
-    }
-
-.top-gadgets-section {
-    background: #232323;
-    border-radius: 18px;
-    padding: 32px 20px 40px 20px;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.top-gadgets-section h2 {
-    color: #f7d354;
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-.top-gadgets-grid {
-    display: flex;
-    gap: 32px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.top-gadget-card {
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-    border: 2px solid #f7d354;
-    border-radius: 15px;
-    padding: 20px 18px 28px 18px;
-    width: 320px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 0.3s;
-}
-.top-gadget-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 18px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-}
-.top-gadget-card h3 {
-    color: #f7d354;
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    text-align: center;
-    text-transform: uppercase;
-}
-.top-gadget-card .descripcion {
-    color: #e0e0e0;
-    font-size: 1rem;
-    text-align: center;
-}
-</style>
+                <style>
+                .top-gadgets-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 32px;
+                    margin-bottom: 40px;
+                }
+                .grid-gadgets {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 32px;
+                }
+                .gadgets-container {
+                }
+                </style>

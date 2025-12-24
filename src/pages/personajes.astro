@@ -1,10 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import FilterBar from '../components/FilterBar.astro';
+import PersonajeCard from '../components/PersonajeCard.astro';
 ---
 
 <Layout title="Personajes - Batman">
     <div class="personajes-container">
-        <h1>Personajes del Universo de Batman</h1>
+        <SectionTitle title="Personajes del Universo de Batman" />
         
         <!-- Buscador y Filtros -->
         <div class="controles">
@@ -14,12 +17,7 @@ import Layout from '../layouts/Layout.astro';
                 class="buscador" 
                 placeholder="Buscar personaje..."
             />
-            
-            <div class="filtros">
-                <button class="btn-filtro active" data-filtro="todos">Todos</button>
-                <button class="btn-filtro" data-filtro="aliados">Aliados</button>
-                <button class="btn-filtro" data-filtro="enemigos">Enemigos</button>
-            </div>
+            <FilterBar filtros={["Todos", "Aliados", "Enemigos"]} selected="Todos" />
         </div>
 
         <div id="contador-resultados" class="contador"></div>
@@ -28,30 +26,12 @@ import Layout from '../layouts/Layout.astro';
         <section class="seccion aliados" data-categoria="aliados">
             <h2 class="titulo-seccion">Aliados</h2>
             <div class="grid-personajes">
-                <div class="card-personaje" data-categoria="aliados" data-nombre="Robin">
-                    <h3>Robin</h3>
-                    <p>Dick Grayson, el primer Robin y compañero fiel de Batman. Acróbata excepcional y líder de los Jóvenes Titanes.</p>
-                </div>
-                <div class="card-personaje" data-categoria="aliados" data-nombre="Alfred Pennyworth">
-                    <h3>Alfred Pennyworth</h3>
-                    <p>Mayordomo y figura paterna de Bruce Wayne. Su sabiduría y apoyo son fundamentales para Batman.</p>
-                </div>
-                <div class="card-personaje" data-categoria="aliados" data-nombre="Comisionado Gordon">
-                    <h3>Comisionado Gordon</h3>
-                    <p>Jefe de la policía de Gotham y aliado clave de Batman en la lucha contra el crimen.</p>
-                </div>
-                <div class="card-personaje" data-categoria="aliados" data-nombre="Batgirl">
-                    <h3>Batgirl</h3>
-                    <p>Barbara Gordon, hija del Comisionado. Experta en tecnología y combate.</p>
-                </div>
-                <div class="card-personaje" data-categoria="aliados" data-nombre="Nightwing">
-                    <h3>Nightwing</h3>
-                    <p>La identidad adulta de Dick Grayson. Héroe independiente pero siempre leal a la familia Bat.</p>
-                </div>
-                <div class="card-personaje" data-categoria="aliados" data-nombre="Lucius Fox">
-                    <h3>Lucius Fox</h3>
-                    <p>Genio tecnológico y CEO de Wayne Enterprises. Creador del equipamiento de Batman.</p>
-                </div>
+                <PersonajeCard nombre="Robin" descripcion="Dick Grayson, el primer Robin y compañero fiel de Batman. Acróbata excepcional y líder de los Jóvenes Titanes." categoria="aliados" />
+                <PersonajeCard nombre="Alfred Pennyworth" descripcion="Mayordomo y figura paterna de Bruce Wayne. Su sabiduría y apoyo son fundamentales para Batman." categoria="aliados" />
+                <PersonajeCard nombre="Comisionado Gordon" descripcion="Jefe de la policía de Gotham y aliado clave de Batman en la lucha contra el crimen." categoria="aliados" />
+                <PersonajeCard nombre="Batgirl" descripcion="Barbara Gordon, hija del Comisionado. Experta en tecnología y combate." categoria="aliados" />
+                <PersonajeCard nombre="Nightwing" descripcion="La identidad adulta de Dick Grayson. Héroe independiente pero siempre leal a la familia Bat." categoria="aliados" />
+                <PersonajeCard nombre="Lucius Fox" descripcion="Genio tecnológico y CEO de Wayne Enterprises. Creador del equipamiento de Batman." categoria="aliados" />
             </div>
         </section>
 
@@ -59,38 +39,14 @@ import Layout from '../layouts/Layout.astro';
         <section class="seccion enemigos" data-categoria="enemigos">
             <h2 class="titulo-seccion">Enemigos</h2>
             <div class="grid-personajes">
-                <div class="card-personaje" data-categoria="enemigos" data-nombre="El Joker">
-                    <h3>El Joker</h3>
-                    <p>El némesis por excelencia. Criminal demente obsesionado con el caos y Batman.</p>
-                </div>
-                <div class="card-personaje" data-categoria="enemigos" data-nombre="El Pingüino">
-                    <h3>El Pingüino</h3>
-                    <p>Oswald Cobblepot, señor del crimen con apariencia de pingüino y paraguas mortales.</p>
-                </div>
-                <div class="card-personaje" data-categoria="enemigos" data-nombre="El Acertijo">
-                    <h3>El Acertijo</h3>
-                    <p>Edward Nygma, criminal obsesionado con los acertijos y demostrar su superioridad intelectual.</p>
-                </div>
-                <div class="card-personaje" data-categoria="enemigos" data-nombre="Catwoman">
-                    <h3>Catwoman</h3>
-                    <p>Selina Kyle, ladrona de joyas con una relación compleja con Batman.</p>
-                </div>
-                <div class="card-personaje" data-categoria="enemigos" data-nombre="Dos Caras">
-                    <h3>Dos Caras</h3>
-                    <p>Harvey Dent, ex fiscal convertido en criminal que toma decisiones lanzando una moneda.</p>
-                </div>
-                <div class="card-personaje" data-categoria="enemigos" data-nombre="Bane">
-                    <h3>Bane</h3>
-                    <p>Táctico brutal conocido por romper la espalda de Batman. Fuerza sobrehumana.</p>
-                </div>
-                <div class="card-personaje" data-categoria="enemigos" data-nombre="Scarecrow">
-                    <h3>Scarecrow</h3>
-                    <p>Jonathan Crane, maestro del miedo que utiliza toxinas para aterrorizar a sus víctimas.</p>
-                </div>
-                <div class="card-personaje" data-categoria="enemigos" data-nombre="Hiedra Venenosa">
-                    <h3>Hiedra Venenosa</h3>
-                    <p>Pamela Isley, eco-terrorista con control sobre las plantas y toxinas letales.</p>
-                </div>
+                <PersonajeCard nombre="El Joker" descripcion="El némesis por excelencia. Criminal demente obsesionado con el caos y Batman." categoria="enemigos" />
+                <PersonajeCard nombre="El Pingüino" descripcion="Oswald Cobblepot, señor del crimen con apariencia de pingüino y paraguas mortales." categoria="enemigos" />
+                <PersonajeCard nombre="El Acertijo" descripcion="Edward Nygma, criminal obsesionado con los acertijos y demostrar su superioridad intelectual." categoria="enemigos" />
+                <PersonajeCard nombre="Catwoman" descripcion="Selina Kyle, ladrona de joyas con una relación compleja con Batman." categoria="enemigos" />
+                <PersonajeCard nombre="Dos Caras" descripcion="Harvey Dent, ex fiscal convertido en criminal que toma decisiones lanzando una moneda." categoria="enemigos" />
+                <PersonajeCard nombre="Bane" descripcion="Táctico brutal conocido por romper la espalda de Batman. Fuerza sobrehumana." categoria="enemigos" />
+                <PersonajeCard nombre="Scarecrow" descripcion="Jonathan Crane, maestro del miedo que utiliza toxinas para aterrorizar a sus víctimas." categoria="enemigos" />
+                <PersonajeCard nombre="Hiedra Venenosa" descripcion="Pamela Isley, eco-terrorista con control sobre las plantas y toxinas letales." categoria="enemigos" />
             </div>
         </section>
     </div>

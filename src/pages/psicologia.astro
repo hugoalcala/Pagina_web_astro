@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import BackButton from '../components/BackButton.astro';
 ---
 <Layout title="Psicología de Batman">
   <section style="max-width: 900px; margin: 0 auto; padding: 40px 0;">
@@ -13,5 +14,8 @@ import Layout from '../layouts/Layout.astro';
       <li><b>Ética:</b> Se niega a matar, lo que lo diferencia de sus enemigos.</li>
     </ul>
     <p style="font-size:1.1rem; color:#e0e0e0;">La psicología de Batman ha sido explorada en cómics, películas y análisis académicos, mostrando cómo el trauma puede ser tanto una debilidad como una fuente de fuerza.</p>
+    <div style="text-align:center; margin-top:32px;">
+      <BackButton href="/batman-temas" text="Volver a Temas" />
+    </div>
   </section>
 </Layout>

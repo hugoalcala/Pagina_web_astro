@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import BackButton from '../components/BackButton.astro';
 ---
 <Layout title="Simbolismo de Batman">
   <section style="max-width: 900px; margin: 0 auto; padding: 40px 0;">
@@ -12,5 +13,8 @@ import Layout from '../layouts/Layout.astro';
       <li><b>El traje:</b> Más que armadura, es un símbolo de invulnerabilidad y misterio.</li>
     </ul>
     <p style="font-size:1.1rem; color:#e0e0e0;">El simbolismo de Batman ha trascendido el cómic, convirtiéndose en un ícono cultural reconocido mundialmente.</p>
+    <div style="text-align:center; margin-top:32px;">
+      <BackButton href="/batman-temas" text="Volver a Temas" />
+    </div>
   </section>
 </Layout>

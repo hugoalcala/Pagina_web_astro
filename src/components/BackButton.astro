@@ -1,0 +1,7 @@
+---
+// Props: href, text, className
+const { href = '/', text = 'Volver', className = '' } = Astro.props;
+---
+<a href={href} class={className} style="padding:10px 22px; font-size:1rem; font-weight:bold; border-radius:8px; border:2px solid #f7d354; background:#181818; color:#f7d354; cursor:pointer; transition:background 0.3s, color 0.3s, box-shadow 0.3s; box-shadow:0 2px 8px rgba(247,211,84,0.08); margin:4px; text-decoration:none; display:inline-block;">
+  {text}
+</a>
