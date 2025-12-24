@@ -1,0 +1,72 @@
+
+---
+import Layout from '../layouts/Layout.astro';
+title: "Gotham City"
+---
+
+<Layout title="Gotham City">
+  <div class="gotham-container">
+    <h1 class="gotham-title">Gotham City</h1>
+    <p class="gotham-intro">
+      Gotham es la icónica ciudad ficticia del universo DC Comics, hogar de Batman y escenario de innumerables historias de héroes y villanos. Conocida por su arquitectura gótica, su atmósfera oscura y su alto índice de criminalidad, Gotham es un personaje más en el mito de Batman.
+    </p>
+    <h2 class="gotham-section">La Batseñal</h2>
+    <p>
+      La Batseñal es un potente reflector con el símbolo del murciélago, utilizado por la policía de Gotham, especialmente el Comisionado Gordon, para llamar a Batman en momentos de crisis. Se proyecta sobre las nubes de la ciudad y se ha convertido en un símbolo de esperanza y temor para criminales.
+    </p>
+    <h2 class="gotham-section">Lugares emblemáticos</h2>
+    <ul>
+      <li><strong>La Mansión Wayne:</strong> Residencia de Bruce Wayne, con acceso secreto a la Batcueva.</li>
+      <li><strong>La Batcueva:</strong> Centro de operaciones de Batman, repleta de tecnología y recuerdos de sus hazañas.</li>
+      <li><strong>El Asilo Arkham:</strong> Hospital psiquiátrico donde son internados muchos de los enemigos de Batman.</li>
+      <li><strong>La Torre Wayne:</strong> Rascacielos y sede de Wayne Enterprises.</li>
+      <li><strong>El Departamento de Policía de Gotham (GCPD):</strong> Donde trabaja el Comisionado Gordon y se coordina la lucha contra el crimen.</li>
+      <li><strong>El Callejón del Crimen:</strong> Lugar donde los padres de Bruce Wayne fueron asesinados, marcando su destino.</li>
+    </ul>
+    <h2 class="gotham-section">Curiosidades</h2>
+    <ul>
+      <li>Gotham está inspirada en ciudades reales como Nueva York y Chicago, pero con un tono mucho más oscuro y decadente.</li>
+      <li>La ciudad ha sido destruida y reconstruida varias veces en los cómics debido a catástrofes y ataques de villanos.</li>
+      <li>La Batseñal es uno de los símbolos más reconocibles de la cultura pop.</li>
+      <li>El clima lluvioso y la niebla son característicos de Gotham, reforzando su atmósfera sombría.</li>
+    </ul>
+  </div>
+</Layout>
+
+<style>
+.gotham-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: rgba(20,20,20,0.95);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+}
+.gotham-title {
+  color: #f7d354;
+  font-size: 2.7rem;
+  text-align: center;
+  margin-bottom: 18px;
+  text-shadow: 2px 2px 8px #000;
+}
+.gotham-intro {
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  margin-bottom: 32px;
+  text-align: center;
+}
+.gotham-section {
+  color: #ffe066;
+  margin-top: 32px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+ul {
+  color: #e0e0e0;
+  margin-left: 24px;
+  margin-bottom: 18px;
+}
+li {
+  margin-bottom: 8px;
+}
+</style>
