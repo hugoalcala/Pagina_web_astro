@@ -38,50 +38,52 @@ info.image_url = "/src/assets/batman.png";
 ---
 
 <Layout title={`Batman - ${info.alias}`}>
-  <section style="max-width: 900px; margin: 0 auto; padding-top: 20px;">
-    
-    <h1>{info.alias} ({info.name})</h1>
-    
-    <hr style="border-top: 3px solid #f7d354; border-color: #f7d354; margin-bottom: 40px;">
-    
-    {info.image_url && (
-      <div style="margin-bottom: 30px; text-align: center;">
-        <img 
-          src={info.image_url} 
-          alt={`Imagen de ${info.alias}`} 
-          style="
-            max-width: 350px;
-            max-height: 450px;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            border-radius: 12px;
-            border: 4px solid #f7d354;
-            background: #181818;
-            display: inline-block;
-            margin: 0 auto;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.5);
-          "
-        />
+  <section style="max-width: 1100px; margin: 0 auto; padding-top: 20px; margin-left: 160px;">
+    <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+      <div style="flex: 0 0 340px; min-width: 240px; max-width: 350px; margin-left: 0; text-align: left;">
+        <h1 style="font-size:2.2rem; margin-bottom: 18px;">{info.alias} ({info.name})</h1>
+        <hr style="border-top: 3px solid #f7d354; border-color: #f7d354; margin-bottom: 30px; margin-left:0; width:90%;">
+        {info.image_url && (
+          <img 
+            src={info.image_url} 
+            alt={`Imagen de ${info.alias}`} 
+            style="
+              max-width: 320px;
+              max-height: 420px;
+              width: 100%;
+              height: auto;
+              object-fit: contain;
+              border-radius: 12px;
+              border: 4px solid #f7d354;
+              background: #181818;
+              display: block;
+              margin-left: 0;
+              margin-bottom: 18px;
+              box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+            "
+          />
+        )}
       </div>
-    )}
-
-    <div style="text-align: center;">
-      <h2>El Defensor de Gotham</h2>
-      <p style="font-size: 1.15rem; line-height: 1.6;">{info.description}</p>
-      
-      <h3>Detalles</h3>
-      <p><strong>Rol:</strong> {info.role}</p>
-      <p><strong>Primera Aparición:</strong> {info.first_appearance || 'Desconocida'}</p>
-
-      <h3>Habilidades Destacadas</h3>
-      <ul style="list-style: none; padding-left: 0;">
-          {info.abilities && info.abilities.map((ability: any) => (
-              <li style="background-color: #333; padding: 8px 15px; margin-bottom: 5px; border-radius: 4px; display: inline-block; margin-right: 10px;">
-                  {ability}
-              </li>
-          ))}
-      </ul>
+      <div style="flex: 1 1 350px; min-width: 260px; text-align: left; margin-top: 70px; display: flex; flex-direction: column; justify-content: flex-start;">
+        <h2 style="text-align:left;">El Defensor de Gotham</h2>
+        <p style="font-size: 1.15rem; line-height: 1.6;">{info.description}</p>
+        <h3>Detalles</h3>
+        <p><strong>Rol:</strong> {info.role}</p>
+        <p><strong>Primera Aparición:</strong> {info.first_appearance || 'Desconocida'}</p>
+        <h3>Habilidades Destacadas</h3>
+        <ul style="list-style: none; padding-left: 0;">
+            {info.abilities && info.abilities.map((ability: any) => (
+                <li style="background-color: #333; padding: 8px 15px; margin-bottom: 5px; border-radius: 4px; display: inline-block; margin-right: 10px;">
+                    {ability}
+                </li>
+            ))}
+        </ul>
+        <div style="margin-top:40px; text-align:left;">
+          <a href="/batman-temas" style="display:inline-block; padding:14px 28px; font-size:1.1rem; font-weight:bold; text-decoration:none; color:#f7d354; background:#181818; border:3px solid #f7d354; border-radius:8px; transition:all 0.3s; box-shadow:0 2px 12px rgba(247,211,84,0.2);">
+            Temas sobre Batman
+          </a>
+        </div>
+      </div>
     </div>
   </section>
   
