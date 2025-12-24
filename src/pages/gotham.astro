@@ -10,6 +10,11 @@ title: "Gotham City"
     <p class="gotham-intro">
       Gotham es la icónica ciudad ficticia del universo DC Comics, hogar de Batman y escenario de innumerables historias de héroes y villanos. Conocida por su arquitectura gótica, su atmósfera oscura y su alto índice de criminalidad, Gotham es un personaje más en el mito de Batman.
     </p>
+      <div style="text-align:center; margin-bottom:32px;">
+        <button class="gotham-map-btn-alt" onclick="window.location.href='/mapa-gotham'">
+          <span class="gotham-map-icon" aria-hidden="true"></span> <span>Mapa de Gotham</span>
+        </button>
+      </div>
     <h2 class="gotham-section">La Batseñal</h2>
     <p>
       La Batseñal es un potente reflector con el símbolo del murciélago, utilizado por la policía de Gotham, especialmente el Comisionado Gordon, para llamar a Batman en momentos de crisis. Se proyecta sobre las nubes de la ciudad y se ha convertido en un símbolo de esperanza y temor para criminales.
@@ -70,3 +75,43 @@ li {
   margin-bottom: 8px;
 }
 </style>
+</style>
+<style>
+.gotham-map-btn-alt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  background: #181a1f;
+  color: #ffe066;
+  font-family: 'Merriweather', serif;
+  font-weight: 600;
+  font-size: 1.13rem;
+  padding: 0.7em 2.1em;
+  border-radius: 12px;
+  border: 2.5px solid #ffe066;
+  box-shadow: 0 2px 18px #000a, 0 0 0 2px #4a90e2cc;
+  letter-spacing: 1.2px;
+  transition: box-shadow 0.25s, border 0.25s, background 0.25s, color 0.25s, transform 0.18s;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  cursor: pointer;
+  border-style: solid;
+}
+.gotham-map-btn-alt:hover {
+  background: #23243a;
+  color: #fff;
+  border-color: #4a90e2;
+  box-shadow: 0 6px 32px #ffe06699, 0 0 0 2px #4a90e2cc;
+  transform: scale(1.045) translateY(-2px);
+}
+.gotham-map-icon {
+  font-size: 1.25em;
+  filter: drop-shadow(0 0 6px #ffe066cc);
+  transition: filter 0.2s;
+}
+.gotham-map-btn-alt:hover .gotham-map-icon {
+  filter: drop-shadow(0 0 12px #4a90e2cc);
+}

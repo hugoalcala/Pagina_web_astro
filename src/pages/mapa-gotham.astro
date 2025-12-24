@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+title: "Mapa de Gotham";
+---
+
+<Layout title="Mapa de Gotham">
+  <div class="mapa-gotham-container">
+    <h1 class="mapa-gotham-title">Mapa de Gotham</h1>
+    <p class="mapa-gotham-desc">Explora los lugares más emblemáticos de Gotham City. Haz clic en los puntos destacados para saber más.</p>
+    <div class="mapa-gotham-img-wrap">
+      <img src="/src/assets/mapa_gotham.png" alt="Mapa ilustrado de Gotham City" class="mapa-gotham-img" />
+      <!-- Puedes añadir puntos interactivos aquí si tienes el mapa -->
+    </div>
+    <a href="/gotham" class="mapa-gotham-back">← Volver a Gotham</a>
+  </div>
+</Layout>
+
+<style>
+.mapa-gotham-container {
+  max-width: 900px;
+  margin: 48px auto 0 auto;
+  padding: 40px 20px 60px 20px;
+  background: rgba(24,28,40,0.93);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px #000a;
+  text-align: center;
+}
+.mapa-gotham-title {
+  color: #ffe066;
+  font-size: 2.5rem;
+  margin-bottom: 18px;
+  font-family: 'Merriweather', serif;
+  letter-spacing: 2px;
+  text-shadow: 0 0 18px #ffe06699, 0 2px 8px #23243a;
+}
+.mapa-gotham-desc {
+  color: #e0e0e0;
+  font-size: 1.15rem;
+  margin-bottom: 32px;
+}
+.mapa-gotham-img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.mapa-gotham-img {
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #23243a99;
+  border: 2.5px solid #4a90e2;
+}
+.mapa-gotham-back {
+  display: inline-block;
+  margin-top: 18px;
+  color: #ffe066;
+  background: #23243a;
+  padding: 0.5em 1.5em;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background 0.2s, color 0.2s;
+}
+.mapa-gotham-back:hover {
+  background: #ffe066;
+  color: #23243a;
+}
+</style>
