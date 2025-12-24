@@ -2,8 +2,48 @@
 // Props: filtros (array), selected, onSelect
 const { filtros = [], selected = '', onSelect } = Astro.props;
 ---
-<div style="display:flex; gap:12px; justify-content:center; margin-bottom:24px;">
-  {filtros.map(filtro => (
-    <button type="button" class={"btn-filtro" + (selected === filtro ? ' active' : '')} style="padding:8px 18px; border-radius:8px; border:2px solid #f7d354; background:#181818; color:#f7d354; font-weight:bold; cursor:pointer; transition:background 0.3s, color 0.3s;" onclick={() => onSelect && onSelect(filtro)}>{filtro}</button>
+<div class="filterbar">
+  {filtros.map((filtro: string) => (
+    <button type="button" class={"btn-filtro" + (selected === filtro ? ' active' : '')}>
+      {filtro}
+      {/* Indicador eliminado por solicitud del usuario */}
+    </button>
   ))}
 </div>
+<style>
+.filterbar {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.btn-filtro {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: 2px solid #f7d354;
+  background: #181818;
+  color: #f7d354;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  outline: none;
+}
+.btn-filtro:hover {
+  background: #232323;
+  color: #ffe066;
+  transform: scale(1.08);
+  box-shadow: 0 2px 12px rgba(247,211,84,0.15);
+}
+.btn-filtro.active {
+  background: #f7d354;
+  color: #181818;
+  box-shadow: 0 4px 18px rgba(247,211,84,0.25);
+  transform: scale(1.12);
+}
+  /* Indicador eliminado por solicitud del usuario */
+@keyframes indicadorFadeIn {
+  from { opacity: 0; transform: translateX(-50%) scaleX(0.5); }
+  to { opacity: 1; transform: translateX(-50%) scaleX(1); }
+}
+</style>

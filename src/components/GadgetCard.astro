@@ -7,8 +7,8 @@ const { nombre, descripcion, caracteristicas = [], imagen } = Astro.props;
   <h3>{nombre}</h3>
   <p class="descripcion">{descripcion}</p>
   <div class="caracteristicas">
-    {Array.isArray(caracteristicas) && caracteristicas.length > 0 && caracteristicas.map((carac, idx) => (
-      <span class="tag" key={idx}>{carac}</span>
+    {Array.isArray(caracteristicas) && caracteristicas.length > 0 && caracteristicas.map((carac) => (
+      <span class="tag">{carac}</span>
     ))}
   </div>
 </div>
