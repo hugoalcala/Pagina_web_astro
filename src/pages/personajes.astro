@@ -9,18 +9,12 @@ import PersonajeCard from '../components/PersonajeCard.astro';
     <div class="personajes-container">
         <SectionTitle title="Personajes del Universo de Batman" />
         
-        <!-- Buscador y Filtros -->
+        <!-- Filtros -->
         <div class="controles">
-            <input 
-                type="text" 
-                id="buscador" 
-                class="buscador" 
-                placeholder="Buscar personaje..."
-            />
             <FilterBar filtros={["Todos", "Aliados", "Enemigos"]} selected="Todos" />
         </div>
 
-        <div id="contador-resultados" class="contador"></div>
+        <!-- <div id="contador-resultados" class="contador"></div> -->
         
         <!-- Sección de Aliados -->
         <section class="seccion aliados" data-categoria="aliados">
@@ -32,6 +26,17 @@ import PersonajeCard from '../components/PersonajeCard.astro';
                 <PersonajeCard nombre="Batgirl" descripcion="Barbara Gordon, hija del Comisionado. Experta en tecnología y combate." categoria="aliados" />
                 <PersonajeCard nombre="Nightwing" descripcion="La identidad adulta de Dick Grayson. Héroe independiente pero siempre leal a la familia Bat." categoria="aliados" />
                 <PersonajeCard nombre="Lucius Fox" descripcion="Genio tecnológico y CEO de Wayne Enterprises. Creador del equipamiento de Batman." categoria="aliados" />
+                <PersonajeCard nombre="Oráculo" descripcion="Barbara Gordon como experta hacker y apoyo táctico para Batman y la Batfamilia." categoria="aliados" />
+                <PersonajeCard nombre="Azrael" descripcion="Jean-Paul Valley, guerrero entrenado por la Orden de San Dumas, llegó a portar el manto de Batman." categoria="aliados" />
+                <PersonajeCard nombre="Huntress" descripcion="Helena Bertinelli, justiciera de Gotham con métodos implacables y gran habilidad con la ballesta." categoria="aliados" />
+                <PersonajeCard nombre="Batwoman" descripcion="Kate Kane, prima de Bruce Wayne, luchadora experta y defensora de Gotham." categoria="aliados" />
+                <PersonajeCard nombre="Red Hood" descripcion="Jason Todd, ex-Robin resucitado, ahora vigilante letal con su propio código." categoria="aliados" />
+                <PersonajeCard nombre="Spoiler" descripcion="Stephanie Brown, joven heroína que ha sido Spoiler, Robin y Batgirl." categoria="aliados" />
+                <PersonajeCard nombre="Ace el Bati-sabueso" descripcion="El fiel perro de Batman, entrenado para misiones especiales." categoria="aliados" />
+                <PersonajeCard nombre="Cassandra Cain" descripcion="Hija de asesinos, experta en artes marciales, ha sido Batgirl y Orphan." categoria="aliados" />
+                <PersonajeCard nombre="Tim Drake" descripcion="El tercer Robin, gran detective y líder de los Jóvenes Titanes como Red Robin." categoria="aliados" />
+                <PersonajeCard nombre="Duke Thomas" descripcion="The Signal, aliado con habilidades metahumanas y protector diurno de Gotham." categoria="aliados" />
+                <PersonajeCard nombre="Lucius Fox Jr." descripcion="Hijo de Lucius Fox, ingeniero brillante y aliado tecnológico de la Batfamilia." categoria="aliados" />
             </div>
         </section>
 
@@ -47,6 +52,23 @@ import PersonajeCard from '../components/PersonajeCard.astro';
                 <PersonajeCard nombre="Bane" descripcion="Táctico brutal conocido por romper la espalda de Batman. Fuerza sobrehumana." categoria="enemigos" />
                 <PersonajeCard nombre="Scarecrow" descripcion="Jonathan Crane, maestro del miedo que utiliza toxinas para aterrorizar a sus víctimas." categoria="enemigos" />
                 <PersonajeCard nombre="Hiedra Venenosa" descripcion="Pamela Isley, eco-terrorista con control sobre las plantas y toxinas letales." categoria="enemigos" />
+                <PersonajeCard nombre="Mr. Freeze" descripcion="Victor Fries, científico trágico que usa tecnología criogénica para salvar a su esposa." categoria="enemigos" />
+                <PersonajeCard nombre="Ra’s al Ghul" descripcion="Líder de la Liga de las Sombras, busca la inmortalidad y la destrucción de Gotham." categoria="enemigos" />
+                <PersonajeCard nombre="Talia al Ghul" descripcion="Hija de Ra’s al Ghul, experta luchadora y amor imposible de Batman." categoria="enemigos" />
+                <PersonajeCard nombre="Clayface" descripcion="Basil Karlo, actor convertido en monstruo de arcilla capaz de cambiar de forma." categoria="enemigos" />
+                <PersonajeCard nombre="Killer Croc" descripcion="Waylon Jones, criminal con apariencia reptiliana y fuerza sobrehumana." categoria="enemigos" />
+                <PersonajeCard nombre="Harley Quinn" descripcion="Harleen Quinzel, ex-psiquiatra y socia caótica del Joker." categoria="enemigos" />
+                <PersonajeCard nombre="Hush" descripcion="Thomas Elliot, cirujano brillante y enemigo obsesionado con destruir a Bruce Wayne." categoria="enemigos" />
+                <PersonajeCard nombre="Firefly" descripcion="Garfield Lynns, pirómano profesional armado con lanzallamas y traje volador." categoria="enemigos" />
+                <PersonajeCard nombre="Black Mask" descripcion="Roman Sionis, jefe criminal conocido por su máscara de ébano y brutalidad." categoria="enemigos" />
+                <PersonajeCard nombre="Solomon Grundy" descripcion="Zombi gigante con fuerza descomunal, resucita cada vez que es derrotado." categoria="enemigos" />
+                <PersonajeCard nombre="Man-Bat" descripcion="Kirk Langstrom, científico que se transforma en un monstruo mitad hombre, mitad murciélago." categoria="enemigos" />
+                <PersonajeCard nombre="Calendar Man" descripcion="Julian Day, criminal obsesionado con fechas y eventos especiales." categoria="enemigos" />
+                <PersonajeCard nombre="Ventrílocuo y Scarface" descripcion="Arnold Wesker y su marioneta mafiosa, Scarface, temidos en el bajo mundo." categoria="enemigos" />
+                <PersonajeCard nombre="Mad Hatter" descripcion="Jervis Tetch, criminal obsesionado con Alicia en el País de las Maravillas y el control mental." categoria="enemigos" />
+                <PersonajeCard nombre="Deadshot" descripcion="Floyd Lawton, el mejor tirador del mundo, mercenario letal y miembro del Escuadrón Suicida." categoria="enemigos" />
+                <PersonajeCard nombre="Deathstroke" descripcion="Slade Wilson, mercenario y asesino de élite, rival físico e intelectual de Batman." categoria="enemigos" />
+                <PersonajeCard nombre="Zsasz" descripcion="Victor Zsasz, asesino en serie que marca su piel por cada víctima." categoria="enemigos" />
             </div>
         </section>
     </div>
@@ -229,7 +251,7 @@ import PersonajeCard from '../components/PersonajeCard.astro';
 
 <script>
     // Funcionalidad de filtrado y búsqueda
-    const buscador = document.getElementById('buscador') as HTMLInputElement;
+    // const buscador = document.getElementById('buscador') as HTMLInputElement;
     const botonesFiltro = document.querySelectorAll('.btn-filtro');
     const tarjetasPersonajes = document.querySelectorAll('.card-personaje');
     const secciones = document.querySelectorAll('.seccion');
@@ -237,48 +259,33 @@ import PersonajeCard from '../components/PersonajeCard.astro';
 
     let filtroActual = 'todos';
 
-    // Función para actualizar la visualización
+    // Función para actualizar la visualización solo por filtro
     function actualizarVista() {
-        const textoBusqueda = buscador.value.toLowerCase();
-        let contadorVisible = 0;
-
+        // Filtrar personajes solo por categoria
         tarjetasPersonajes.forEach(tarjeta => {
-            const nombre = (tarjeta as HTMLElement).dataset.nombre?.toLowerCase() || '';
             const categoria = (tarjeta as HTMLElement).dataset.categoria;
-            
-            const coincideBusqueda = nombre.includes(textoBusqueda);
             const coincideCategoria = filtroActual === 'todos' || categoria === filtroActual;
-
-            if (coincideBusqueda && coincideCategoria) {
+            if (coincideCategoria) {
                 tarjeta.classList.remove('oculto');
-                contadorVisible++;
             } else {
                 tarjeta.classList.add('oculto');
             }
         });
 
-        // Mostrar/ocultar secciones según el filtro
+        // Mostrar/ocultar secciones solo si tienen personajes visibles
         secciones.forEach(seccion => {
             const categoria = (seccion as HTMLElement).dataset.categoria;
-            if (filtroActual === 'todos' || categoria === filtroActual) {
+            // Seleccionar solo las tarjetas de esta sección
+            const visibles = Array.from(seccion.querySelectorAll('.card-personaje')).filter(card => !card.classList.contains('oculto'));
+            if (visibles.length > 0 && (filtroActual === 'todos' || categoria === filtroActual)) {
                 seccion.classList.remove('oculto');
             } else {
                 seccion.classList.add('oculto');
             }
         });
-
-        // Actualizar contador
-        if (contadorResultados) {
-            if (textoBusqueda) {
-                contadorResultados.textContent = `${contadorVisible} personaje${contadorVisible !== 1 ? 's' : ''} encontrado${contadorVisible !== 1 ? 's' : ''}`;
-            } else {
-                contadorResultados.textContent = '';
-            }
-        }
     }
 
-    // Event listener para el buscador
-    buscador?.addEventListener('input', actualizarVista);
+    // (Eliminado event listener del buscador)
 
     // Event listeners para los botones de filtro
     botonesFiltro.forEach(boton => {

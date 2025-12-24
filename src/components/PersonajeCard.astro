@@ -2,7 +2,7 @@
 // Props: nombre, descripcion, categoria
 const { nombre, descripcion, categoria } = Astro.props;
 ---
-<div class={"card-personaje " + categoria} style="background:#232323; border:2px solid #f7d354; border-radius:12px; padding:18px 16px; margin-bottom:18px; min-width:220px; max-width:320px; box-shadow:0 2px 8px rgba(0,0,0,0.12);">
+<div class={"card-personaje " + categoria} data-nombre={nombre} data-categoria={categoria} style="background:#232323; border:2px solid #f7d354; border-radius:12px; padding:18px 16px; margin-bottom:18px; min-width:220px; max-width:320px; box-shadow:0 2px 8px rgba(0,0,0,0.12);">
   <h3 style="color:#f7d354; margin-bottom:8px;">{nombre}</h3>
   <p style="color:#e0e0e0;">{descripcion}</p>
 </div>

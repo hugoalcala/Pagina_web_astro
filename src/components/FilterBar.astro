@@ -4,7 +4,7 @@ const { filtros = [], selected = '', onSelect } = Astro.props;
 ---
 <div class="filterbar">
   {filtros.map((filtro: string) => (
-    <button type="button" class={"btn-filtro" + (selected === filtro ? ' active' : '')}>
+    <button type="button" class={"btn-filtro" + (selected === filtro ? ' active' : '')} data-filtro={filtro.toLowerCase()}>
       {filtro}
       {/* Indicador eliminado por solicitud del usuario */}
     </button>
