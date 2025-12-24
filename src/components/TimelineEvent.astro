@@ -1,0 +1,13 @@
+---
+// Props: year, categoria, titulo, descripcion
+const { year, categoria, titulo, descripcion } = Astro.props;
+---
+<div class="timeline-item" data-categoria={categoria} style="display:flex; align-items:flex-start; margin-bottom:32px;">
+  <div class="timeline-marker" style="width:18px; height:18px; background:#f7d354; border-radius:50%; margin-right:18px; margin-top:8px;"></div>
+  <div class="timeline-content" style="background:#232323; border-radius:10px; padding:18px 22px; box-shadow:0 2px 8px rgba(0,0,0,0.10); min-width:220px;">
+    <span class="year" style="color:#f7d354; font-weight:bold;">{year}</span>
+    <span class={"categoria-badge " + categoria} style="margin-left:12px; color:#fff; background:#444; border-radius:8px; padding:2px 10px; font-size:0.95em;">{categoria}</span>
+    <h3 style="margin:10px 0 8px 0; color:#f7d354;">{titulo}</h3>
+    <p style="color:#e0e0e0;">{descripcion}</p>
+  </div>
+</div>

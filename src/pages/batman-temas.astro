@@ -1,29 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ThemeCard from '../components/ThemeCard.astro';
 ---
 
 <Layout title="Temas de Batman">
   <section style="max-width: 1000px; margin: 0 auto; padding: 40px 0;">
     <h1 style="text-align:center; color:#f7d354; font-size:2.3rem; margin-bottom:36px;">Temas sobre Batman</h1>
     <div style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;">
-      <a href="/psicologia" style="text-decoration:none;">
-        <div style="background:#181818; border:2px solid #f7d354; border-radius:16px; width:260px; padding:28px 18px; text-align:center; transition:box-shadow 0.3s; box-shadow:0 2px 12px rgba(0,0,0,0.3);">
-          <h2 style="color:#f7d354; margin-bottom:12px;">Psicología de Batman</h2>
-          <p style="color:#e0e0e0;">Analiza la mente, traumas y motivaciones de Bruce Wayne.</p>
-        </div>
-      </a>
-      <a href="/simbolismo" style="text-decoration:none;">
-        <div style="background:#181818; border:2px solid #f7d354; border-radius:16px; width:260px; padding:28px 18px; text-align:center; transition:box-shadow 0.3s; box-shadow:0 2px 12px rgba(0,0,0,0.3);">
-          <h2 style="color:#f7d354; margin-bottom:12px;">Simbolismo</h2>
-          <p style="color:#e0e0e0;">Descubre el significado del murciélago y su impacto en Gotham.</p>
-        </div>
-      </a>
-      <a href="/etica" style="text-decoration:none;">
-        <div style="background:#181818; border:2px solid #f7d354; border-radius:16px; width:260px; padding:28px 18px; text-align:center; transition:box-shadow 0.3s; box-shadow:0 2px 12px rgba(0,0,0,0.3);">
-          <h2 style="color:#f7d354; margin-bottom:12px;">Ética y Justicia</h2>
-          <p style="color:#e0e0e0;">Reflexiona sobre los dilemas morales, el código de no matar y la visión de justicia de Batman.</p>
-        </div>
-      </a>
+      <ThemeCard href="/psicologia" title="Psicología de Batman" description="Analiza la mente, traumas y motivaciones de Bruce Wayne." />
+      <ThemeCard href="/simbolismo" title="Simbolismo" description="Descubre el significado del murciélago y su impacto en Gotham." />
+      <ThemeCard href="/etica" title="Ética y Justicia" description="Reflexiona sobre los dilemas morales, el código de no matar y la visión de justicia de Batman." />
     </div>
   </section>
 </Layout>

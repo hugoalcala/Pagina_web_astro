@@ -1,0 +1,36 @@
+---
+// Props: title, description, href
+const { title, description, href } = Astro.props;
+---
+<style>
+  .theme-card-link {
+    text-decoration: none;
+  }
+  .theme-card {
+    background: #181818;
+    border: 2px solid #f7d354;
+    border-radius: 16px;
+    width: 260px;
+    padding: 28px 18px;
+    text-align: center;
+    transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    margin-bottom: 0;
+    cursor: pointer;
+    will-change: transform, box-shadow, border-color;
+    position: relative;
+    z-index: 1;
+  }
+  .theme-card:hover, .theme-card:focus {
+    box-shadow: 0 8px 32px 0 rgba(247,211,84,0.25), 0 2px 12px rgba(0,0,0,0.3);
+    transform: translateY(-8px) scale(1.04);
+    border-color: #ffe066;
+    outline: none;
+  }
+</style>
+<a href={href} class="theme-card-link">
+  <div class="theme-card" tabindex="0">
+    <h2 style="color:#f7d354; margin-bottom:12px;">{title}</h2>
+    <p style="color:#e0e0e0;">{description}</p>
+  </div>
+</a>

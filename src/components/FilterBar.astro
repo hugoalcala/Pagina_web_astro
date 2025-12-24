@@ -1,0 +1,9 @@
+---
+// Props: filtros (array), selected, onSelect
+const { filtros = [], selected = '', onSelect } = Astro.props;
+---
+<div style="display:flex; gap:12px; justify-content:center; margin-bottom:24px;">
+  {filtros.map(filtro => (
+    <button type="button" class={"btn-filtro" + (selected === filtro ? ' active' : '')} style="padding:8px 18px; border-radius:8px; border:2px solid #f7d354; background:#181818; color:#f7d354; font-weight:bold; cursor:pointer; transition:background 0.3s, color 0.3s;" onclick={() => onSelect && onSelect(filtro)}>{filtro}</button>
+  ))}
+</div>

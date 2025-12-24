@@ -1,0 +1,11 @@
+---
+// Props: nombre, descripcion, caracteristicas (array)
+const { nombre, descripcion, caracteristicas = [] } = Astro.props;
+---
+<div class="card-gadget" style="background:linear-gradient(145deg,#1a1a1a,#2d2d2d); border:2px solid #f7d354; border-radius:15px; padding:30px; margin-bottom:18px; box-shadow:0 5px 20px rgba(0,0,0,0.5);">
+  <h3 style="color:#f7d354; font-size:1.2rem; margin-bottom:12px;">{nombre}</h3>
+  <p class="descripcion" style="color:#e0e0e0; margin-bottom:16px;">{descripcion}</p>
+  <div class="caracteristicas" style="display:flex; gap:10px; flex-wrap:wrap;">
+    {caracteristicas.map(carac => <span class="tag" style="background-color:rgba(247,211,84,0.2); color:#f7d354; padding:6px 14px; border-radius:20px; font-size:0.85rem; font-weight:bold; border:1px solid rgba(247,211,84,0.4);">{carac}</span>)}
+  </div>
+</div>
