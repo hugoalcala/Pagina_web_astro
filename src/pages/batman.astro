@@ -30,16 +30,16 @@ const defaultInfo = {
   role: "Héroe",
   abilities: ["Artes Marciales", "Habilidades de Detective", "Sigilo"],
   first_appearance: "Desconocida",
-  image_url: "/src/assets/batman.png"
+  image_url: "/batman.png"
 };
 
 const info = batmanInfo || defaultInfo;
-info.image_url = "/src/assets/batman.png";
+info.image_url = "/batman.png";
 ---
 
 <Layout title={`Batman - ${info.alias}`}>
-  <section style="max-width: 1100px; margin: 0 auto; padding-top: 20px; margin-left: 160px;">
-    <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+  <section style="max-width: 1100px; margin: 0 auto; padding-top: 20px;">
+    <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; justify-content: center;">
       <div style="flex: 0 0 340px; min-width: 240px; max-width: 350px; margin-left: 0; text-align: left;">
         <SectionTitle title={`${info.alias} (${info.name})`} />
         {info.image_url && (

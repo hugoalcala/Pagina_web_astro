@@ -3,7 +3,6 @@
 // Props: Define las variables que las páginas que usen este layout deben proveer.
 // Aquí solo necesitamos el título.
 const { title = 'Batman Fan Site' } = Astro.props;
-import logoBatman from '../assets/logo batman.png';
 ---
 
 <!doctype html>
@@ -11,7 +10,7 @@ import logoBatman from '../assets/logo batman.png';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href={logoBatman.src} />
+    <link rel="icon" type="image/png" href="/logo%20batman.png" />
     <title>{title}</title>
     <style>
         /* Estilos globales para la web */
@@ -19,8 +18,9 @@ import logoBatman from '../assets/logo batman.png';
         main { min-height: 80vh; padding: 20px; max-width: 1200px; margin: 0 auto; }
 
         /* Header Style */
-        .header { background-color: #000; color: #f7d354; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #f7d354; }
-        .header a { color: white; text-decoration: none; font-weight: bold; padding: 8px 15px; }
+        .header { background-color: #000; color: #f7d354; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #f7d354; flex-wrap: wrap; gap: 10px; }
+        .header > div { display: flex; flex-wrap: wrap; gap: 5px; }
+        .header a { color: white; text-decoration: none; font-weight: bold; padding: 8px 15px; white-space: nowrap; }
         .header a:hover { color: #f7d354; }
         .header-logo { height: 50px; width: auto; object-fit: contain; }
 
@@ -33,6 +33,22 @@ import logoBatman from '../assets/logo batman.png';
             margin-top: 40px; 
             border-top: 1px solid #333; 
             font-size: 0.9em;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            main { padding: 15px; }
+            .header { padding: 10px 15px; }
+            .header a { padding: 6px 10px; font-size: 0.9rem; }
+            .header-logo { height: 40px; }
+        }
+
+        @media (max-width: 480px) {
+            main { padding: 10px; }
+            .header { padding: 8px 10px; }
+            .header > div { gap: 3px; }
+            .header a { padding: 5px 8px; font-size: 0.8rem; }
+            .header-logo { height: 35px; }
         }
     </style>
   </head>
@@ -47,7 +63,7 @@ import logoBatman from '../assets/logo batman.png';
             
         </div>
         <a href="/">
-          <img src={logoBatman.src} alt="Batman Logo" class="header-logo" />
+          <img src="/logo%20batman.png" alt="Batman Logo" class="header-logo" />
         </a>
     </header>
 

@@ -27,6 +27,36 @@ const { title, description, href } = Astro.props;
     border-color: #ffe066;
     outline: none;
   }
+
+  @media (max-width: 768px) {
+    .theme-card {
+      width: 100%;
+      max-width: 280px;
+      padding: 20px 15px;
+    }
+    .theme-card h2 {
+      font-size: 1.3rem;
+    }
+    .theme-card p {
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .theme-card {
+      width: 100%;
+      max-width: 100%;
+      padding: 15px 12px;
+      border-radius: 12px;
+    }
+    .theme-card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .theme-card p {
+      font-size: 0.85rem;
+    }
+  }
 </style>
 <a href={href} class="theme-card-link">
   <div class="theme-card" tabindex="0">

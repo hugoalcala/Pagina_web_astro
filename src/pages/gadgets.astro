@@ -8,9 +8,9 @@ import BackButton from '../components/BackButton.astro';
     <div class="top-gadgets-section">
         <h2>Top 3 Gadgets Más Usados</h2>
         <div class="top-gadgets-grid">
-            <GadgetCard nombre="Batarang" imagen="/src/assets/batarang.webp" descripcion="Proyectil con forma de murciélago. Existe en múltiples variantes: explosivo, eléctrico, de rastreo y control remoto." caracteristicas={["Arma arrojadiza", "Versátil"]} />
-            <GadgetCard nombre="Cinturón de Utilidades" imagen="/src/assets/cinturon_batman.jpg" descripcion="Contiene todos sus gadgets en compartimentos especializados. Hecho de aleación ligera y resistente." caracteristicas={["Almacenamiento", "Icónico"]} />
-            <GadgetCard nombre="Pistola de Gancho" imagen="/src/assets/Pistola_Gancho_Batman.webp" descripcion="Dispositivo de agarre que dispara un cable de alta resistencia para escalar edificios y moverse rápidamente." caracteristicas={["Movilidad", "Esencial"]} />
+            <GadgetCard nombre="Batarang" imagen="/batarang.webp" descripcion="Proyectil con forma de murciélago. Existe en múltiples variantes: explosivo, eléctrico, de rastreo y control remoto." caracteristicas={["Arma arrojadiza", "Versátil"]} />
+            <GadgetCard nombre="Cinturón de Utilidades" imagen="/cinturon_batman.jpg" descripcion="Contiene todos sus gadgets en compartimentos especializados. Hecho de aleación ligera y resistente." caracteristicas={["Almacenamiento", "Icónico"]} />
+            <GadgetCard nombre="Pistola de Gancho" imagen="/Pistola_Gancho_Batman.webp" descripcion="Dispositivo de agarre que dispara un cable de alta resistencia para escalar edificios y moverse rápidamente." caracteristicas={["Movilidad", "Esencial"]} />
         </div>
     </div>
     <div class="gadgets-container">
@@ -50,5 +50,42 @@ import BackButton from '../components/BackButton.astro';
                     gap: 32px;
                 }
                 .gadgets-container {
+                }
+                
+                @media (max-width: 1024px) {
+                    .top-gadgets-grid,
+                    .grid-gadgets {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 24px;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .top-gadgets-grid,
+                    .grid-gadgets {
+                        grid-template-columns: 1fr;
+                        gap: 16px;
+                        margin-bottom: 20px;
+                    }
+                    .gadgets-container h1 {
+                        font-size: 1.8rem;
+                    }
+                    .intro {
+                        font-size: 0.95rem;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .top-gadgets-grid,
+                    .grid-gadgets {
+                        grid-template-columns: 1fr;
+                        gap: 12px;
+                    }
+                    .gadgets-container h1 {
+                        font-size: 1.4rem;
+                    }
+                    .intro {
+                        font-size: 0.85rem;
+                    }
                 }
                 </style>

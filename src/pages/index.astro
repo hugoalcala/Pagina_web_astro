@@ -1,13 +1,12 @@
 ---
 // src/pages/index.astro
-import batLogo from '../assets/logo batman.png';
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href={batLogo.src} />
+    <link rel="icon" type="image/png" href="/logo%20batman.png" />
     <title>Bienvenido a Gotham - Fan Site</title>
     <style>
       body {
@@ -17,13 +16,13 @@ import batLogo from '../assets/logo batman.png';
         text-align: center;
         background-color: #0d1117;
         color: white;
-        padding: 50px;
+        padding: 50px 20px;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        overflow-y: hidden;
+        overflow-y: auto;
       }
       .logo-img {
           width: 150px;
@@ -40,6 +39,35 @@ import batLogo from '../assets/logo batman.png';
         font-size: 1.2rem;
         margin-bottom: 40px;
         max-width: 600px;
+      }
+
+      @media (max-width: 768px) {
+        padding: 30px 15px;
+        h1 {
+          font-size: 2.5rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+        .logo-img {
+          width: 120px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        padding: 20px 10px;
+        h1 {
+          font-size: 1.8rem;
+          margin-bottom: 15px;
+        }
+        p {
+          font-size: 0.9rem;
+          margin-bottom: 25px;
+        }
+        .logo-img {
+          width: 100px;
+          margin-bottom: 15px;
+        }
       }
       .bat-button {
         display: inline-block;
@@ -99,7 +127,7 @@ import batLogo from '../assets/logo batman.png';
     </style>
   </head>
   <body>
-    <img src={batLogo.src} alt="Logo de Batman" class="logo-img" />
+    <img src="/logo%20batman.png" alt="Logo de Batman" class="logo-img" />
 
     <h1>Bienvenido a la Batcueva Digital</h1>
     <p>

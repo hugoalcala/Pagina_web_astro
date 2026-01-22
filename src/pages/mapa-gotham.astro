@@ -8,7 +8,7 @@ title: "Mapa de Gotham";
     <h1 class="mapa-gotham-title">Mapa de Gotham</h1>
     <p class="mapa-gotham-desc">Explora los lugares más emblemáticos de Gotham City. Haz clic en los puntos destacados para saber más.</p>
     <div class="mapa-gotham-img-wrap" style="position:relative;">
-      <img src="/src/assets/mapa_gotham.png" alt="Mapa ilustrado de Gotham City" class="mapa-gotham-img" />
+      <img src="/mapa_gotham.png" alt="Mapa ilustrado de Gotham City" class="mapa-gotham-img" />
       <div class="mapa-gotham-fog"></div>
       <div class="mapa-gotham-lights"></div>
     </div>
@@ -102,5 +102,46 @@ title: "Mapa de Gotham";
   40% { opacity: 0.9; filter: blur(1.5px); }
   60% { opacity: 0.6; filter: blur(2.5px); }
   100% { opacity: 0.8; filter: blur(2px); }
+}
+
+@media (max-width: 768px) {
+  .mapa-gotham-container {
+    margin: 24px auto 0 auto;
+    padding: 25px 15px 40px 15px;
+  }
+  .mapa-gotham-title {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  .mapa-gotham-desc {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+  .mapa-gotham-back {
+    padding: 0.4em 1.2em;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapa-gotham-container {
+    margin: 12px auto 0 auto;
+    padding: 15px 10px 25px 10px;
+  }
+  .mapa-gotham-title {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 12px #ffe06699, 0 2px 4px #23243a;
+  }
+  .mapa-gotham-desc {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+  .mapa-gotham-back {
+    padding: 0.35em 1em;
+    font-size: 0.8rem;
+  }
 }
 </style>
