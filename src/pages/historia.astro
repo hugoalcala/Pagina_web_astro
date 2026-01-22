@@ -1,51 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import FilterBar from '../components/FilterBar.astro';
 ---
 
 <Layout title="Historia - Batman">
         <div class="historia-container">
                 <h1>Historia de Batman</h1>
                 <p class="intro">Explora la evolución del Caballero Oscuro a través de cómics y películas</p>
-
-                <!-- Filtros -->
-                <FilterBar filtros={["Todos", "📚 Cómics", "🎬 Películas"]} selected="Todos" />
-                                <script is:inline>
-                                (() => {
-                                    const filtros = ["Todos", "📚 Cómics", "🎬 Películas"];
-                                    const categorias = {
-                                        "Todos": null,
-                                        "📚 Cómics": "comics",
-                                        "🎬 Películas": "peliculas"
-                                    };
-                                    function setupFilterBar() {
-                                        const filterBar = document.querySelector('.filterbar');
-                                        if (!filterBar) return;
-                                        filterBar.addEventListener('click', (e) => {
-                                            const btn = e.target.closest('.btn-filtro');
-                                            if (!btn) return;
-                                            filterBar.querySelectorAll('.btn-filtro').forEach(b => b.classList.remove('active'));
-                                            btn.classList.add('active');
-                                            const filtro = btn.textContent.trim();
-                                            const categoria = categorias[filtro];
-                                            document.querySelectorAll('.timeline-item').forEach(item => {
-                                                if (!categoria || item.dataset.categoria === categoria) {
-                                                    item.style.display = '';
-                                                } else {
-                                                    item.style.display = 'none';
-                                                }
-                                            });
-                                        });
-                                    }
-                                    if (document.readyState === 'loading') {
-                                        document.addEventListener('DOMContentLoaded', setupFilterBar);
-                                    } else {
-                                        setupFilterBar();
-                                    }
-                                    // Astro SPA navigation support
-                                    document.addEventListener('astro:after-swap', setupFilterBar);
-                                })();
-                                </script>
 
         <!-- Timeline -->
         <div class="timeline">
@@ -516,4 +476,6 @@ import FilterBar from '../components/FilterBar.astro';
         });
     });
 </script>
+
+
 
